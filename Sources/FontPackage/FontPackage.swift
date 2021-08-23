@@ -17,19 +17,6 @@ public struct FontMenu: View{
     var paddingNumButton: CGFloat
     var hovereffect: HoverEffect
     
-    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshadeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect){
-        self._fontname = fontname
-        self.colorRect = colorRect
-        self.colorFont = colorFont
-        self.colorFamily = colorFamily
-        self.colorButton = colorButton
-        self.BackgroundButton = backgroundButton
-        self.clipshapeButton = clipshadeButton
-        self.paddingbutton = paddingButton
-        self.paddingNumButton = paddingNumButton
-        self.hovereffect = hovereffect
-    }
-    
     public var body: some View{
         ZStack{
             Button(action: {
@@ -106,5 +93,59 @@ public struct FontMenu: View{
                 }
             }
         }
+    }
+}
+
+extension FontMenu{
+    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshadeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect){
+        self._fontname = fontname
+        self.colorRect = colorRect
+        self.colorFont = colorFont
+        self.colorFamily = colorFamily
+        self.colorButton = colorButton
+        self.BackgroundButton = backgroundButton
+        self.clipshapeButton = clipshadeButton
+        self.paddingbutton = paddingButton
+        self.paddingNumButton = paddingNumButton
+        self.hovereffect = hovereffect
+    }
+    
+    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, hovereffect: HoverEffect){
+        self._fontname = fontname
+        self.colorRect = colorRect
+        self.colorFont = colorFont
+        self.colorFamily = colorFamily
+        self.colorButton = colorButton
+        self.BackgroundButton = Color.clear
+        self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
+        self.paddingbutton = .all
+        self.paddingNumButton = 0
+        self.hovereffect = hovereffect
+    }
+    
+    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color){
+        self._fontname = fontname
+        self.colorRect = colorRect
+        self.colorFont = colorFont
+        self.colorFamily = colorFamily
+        self.colorButton = colorButton
+        self.BackgroundButton = Color.clear
+        self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
+        self.paddingbutton = .all
+        self.paddingNumButton = 0
+        self.hovereffect = .automatic
+    }
+    
+    public init(fontname: Binding<String>){
+        self._fontname = fontname
+        self.colorRect = Color(#colorLiteral(red: 0.9330300689, green: 0.9330299497, blue: 0.9330299497, alpha: 1))
+        self.colorFont = Color(#colorLiteral(red: 0.8600999117, green: 0.8600999713, blue: 0.8600999117, alpha: 0.6019079507))
+        self.colorFamily = Color.black
+        self.colorButton = Color.blue
+        self.BackgroundButton = Color.clear
+        self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
+        self.paddingbutton = .all
+        self.paddingNumButton = 0
+        self.hovereffect = .automatic
     }
 }
