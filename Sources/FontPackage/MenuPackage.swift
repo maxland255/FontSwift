@@ -46,16 +46,16 @@ extension CustomMenu{
         self._showmenu = showMenu
         self.colorFont = colorFont
         self.colorRect = colorRect
-        self.content = content
         self.espacement = espacement
+        self.content = content
     }
     
     public init(showMenu: Binding<Bool>, colorFont: Color, colorRect: Color, @ViewBuilder content: @escaping () -> Content){
         self._showmenu = showMenu
         self.colorFont = colorFont
         self.colorRect = colorRect
-        self.content = content
         self.espacement = -5
+        self.content = content
     }
 }
 

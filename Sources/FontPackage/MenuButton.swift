@@ -73,7 +73,6 @@ extension CustomMenuButton{
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
-        self.content = content
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = clipshapeButton
@@ -83,6 +82,7 @@ extension CustomMenuButton{
         self.fontButton = fontButton
         self.fontWeightButton = fontWeightButton
         self.espacement = espacement
+        self.content = content
     }
     
     public init(showMenu: Binding<Bool>, nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
@@ -90,7 +90,6 @@ extension CustomMenuButton{
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
-        self.content = content
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = clipshapeButton
@@ -100,6 +99,7 @@ extension CustomMenuButton{
         self.fontButton = fontButton
         self.fontWeightButton = fontWeightButton
         self.espacement = espacement
+        self.content = content
     }
     
     public init(showMenu: Binding<Bool>, nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
@@ -107,7 +107,6 @@ extension CustomMenuButton{
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
-        self.content = content
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = clipshapeButton
@@ -117,6 +116,7 @@ extension CustomMenuButton{
         self.fontButton = fontButton
         self.fontWeightButton = fontWeightButton
         self.espacement = espacement
+        self.content = content
     }
     
     public init(showMenu: Binding<Bool>, nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
@@ -124,7 +124,6 @@ extension CustomMenuButton{
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
-        self.content = content
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
@@ -134,6 +133,7 @@ extension CustomMenuButton{
         self.fontButton = fontButton
         self.fontWeightButton = fontWeightButton
         self.espacement = espacement
+        self.content = content
     }
     
     public init(showMenu: Binding<Bool>, nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
@@ -141,7 +141,6 @@ extension CustomMenuButton{
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
-        self.content = content
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = clipshapeButton
@@ -151,6 +150,7 @@ extension CustomMenuButton{
         self.fontButton = fontButton
         self.fontWeightButton = fontWeightButton
         self.espacement = espacement
+        self.content = content
     }
     
     public init(showMenu: Binding<Bool>, nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
@@ -158,7 +158,6 @@ extension CustomMenuButton{
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
-        self.content = content
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
@@ -168,6 +167,7 @@ extension CustomMenuButton{
         self.fontButton = fontButton
         self.fontWeightButton = fontWeightButton
         self.espacement = espacement
+        self.content = content
     }
     
     public init(showMenu: Binding<Bool>, nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, hovereffect: HoverEffect, @ViewBuilder content: @escaping () -> Content){
@@ -175,7 +175,6 @@ extension CustomMenuButton{
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
-        self.content = content
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = clipshapeButton
@@ -185,6 +184,7 @@ extension CustomMenuButton{
         self.fontButton = fontButton
         self.fontWeightButton = fontWeightButton
         self.espacement = -5
+        self.content = content
     }
     
     public init(showMenu: Binding<Bool>, nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
@@ -192,7 +192,6 @@ extension CustomMenuButton{
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
-        self.content = content
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = clipshapeButton
@@ -202,5 +201,6 @@ extension CustomMenuButton{
         self.fontButton = .headline
         self.fontWeightButton = .regular
         self.espacement = espacement
+        self.content = content
     }
 }
