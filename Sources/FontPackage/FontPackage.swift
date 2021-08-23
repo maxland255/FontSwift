@@ -33,67 +33,65 @@ public struct FontMenu: View{
                 .clipShape(clipshapeButton)
                 .hoverEffect(hovereffect)
             
-            if showmenu{
-                ZStack{
-                    Rectangle()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .onTapGesture(perform: {
-                            withAnimation(.linear(duration: 0.5)){
-                                self.showmenu = false
-                            }
-                        })
-                        .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.00000000000000000000000000000000000001)))
-                    Rectangle()
-                        .frame(width: 350)
-                        .frame(minHeight: 100, maxHeight: 1000)
-                        .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                        .foregroundColor(colorRect)
-                        
-                    ScrollView{
-                        LazyVStack{
-                            ForEach(UIFont.familyNames, id: \.self){family in
-                                VStack{
+            ZStack{
+                Rectangle()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .onTapGesture(perform: {
+                        withAnimation(.linear(duration: 0.5)){
+                            self.showmenu = false
+                        }
+                    })
+                    .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.00000000000000000000000000000000000001)))
+                Rectangle()
+                    .frame(width: 350)
+                    .frame(minHeight: 100, maxHeight: 1000)
+                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                    .foregroundColor(colorRect)
+                    
+                ScrollView{
+                    LazyVStack{
+                        ForEach(UIFont.familyNames, id: \.self){family in
+                            VStack{
+                                Button(action: {
+                                    withAnimation(.linear(duration: 0.5)){
+                                        self.showmenu = false
+                                    }
+                                }) {
+                                    Text("\(family):")
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(colorFamily)
+                                }.padding(.top)
+                                
+                                ForEach(UIFont.fontNames(forFamilyName: family), id: \.self){font in
                                     Button(action: {
+                                        self.fontname = font
                                         withAnimation(.linear(duration: 0.5)){
                                             self.showmenu = false
                                         }
                                     }) {
-                                        Text("\(family):")
-                                            .font(.title2)
-                                            .fontWeight(.bold)
-                                            .foregroundColor(colorFamily)
-                                    }.padding(.top)
-                                    
-                                    ForEach(UIFont.fontNames(forFamilyName: family), id: \.self){font in
-                                        Button(action: {
-                                            self.fontname = font
-                                            withAnimation(.linear(duration: 0.5)){
-                                                self.showmenu = false
-                                            }
-                                        }) {
-                                            ZStack{
-                                                Rectangle()
-                                                    .frame(minHeight: 30, maxHeight: 1000)
-                                                    .foregroundColor(colorFont)
-                                                    .opacity(0.7)
-                                                Text("\(font)")
-                                                    .font(Font(UIFont(name: "\(font)", size: 20)!))
-                                                    .foregroundColor(.black)
-                                                    .padding(.vertical)
-                                                    .padding(.horizontal, 5)
-                                            }.frame(width: 350)
-                                        }.hoverEffect(.highlight)
-                                        .padding(.bottom, -5)
-                                    }
+                                        ZStack{
+                                            Rectangle()
+                                                .frame(minHeight: 30, maxHeight: 1000)
+                                                .foregroundColor(colorFont)
+                                                .opacity(0.7)
+                                            Text("\(font)")
+                                                .font(Font(UIFont(name: "\(font)", size: 20)!))
+                                                .foregroundColor(.black)
+                                                .padding(.vertical)
+                                                .padding(.horizontal, 5)
+                                        }.frame(width: 350)
+                                    }.hoverEffect(.highlight)
+                                    .padding(.bottom, -5)
                                 }
                             }
                         }
-                    }.clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                        .navigationBarHidden(true)
-                        .frame(width: 350)
-                        .frame(minHeight: 100, maxHeight: 1000)
-                }
-            }
+                    }
+                }.clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                    .navigationBarHidden(true)
+                    .frame(width: 350)
+                    .frame(minHeight: 100, maxHeight: 1000)
+            }.scaleEffect(showmenu ? 1 : 0)
         }
     }
 }
