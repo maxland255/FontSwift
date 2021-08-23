@@ -1,10 +1,3 @@
-//
-//  SwiftUIView.swift
-//  SwiftUIView
-//
-//  Created by Harry Pieteraerens on 23/08/2021.
-//
-
 import SwiftUI
 
 @available(iOS 14, *)
