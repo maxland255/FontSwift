@@ -1,4 +1,3 @@
-//
 import SwiftUI
 
 @available(iOS 14, macOS 11, *)
