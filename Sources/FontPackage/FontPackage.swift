@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 public struct FontPackage {
     public private(set) var text = "Hello, World!"
@@ -19,15 +20,15 @@ public struct FontMenu: View{
     
     @State var hovereffect = false
     
+    public init(showmenu: Binding<Bool>, fontname: Binding<String>, colorFont: Binding<Color>, colorRect: Binding<Color>, colorFamily: Binding<Color>){
+        self._showmenu = showmenu
+        self._fontname = fontname
+        self._colorRect = colorRect
+        self._colorFont = colorFont
+        self._colorFamily = colorFamily
+    }
+    
     public var body: some View{
-//        public init(showmenu: Bool, fontname: String, colorFont: Color, colorRect: Color, colorFamily: Color){
-//            self.showmenu = showmenu
-//            self.fontname = fontname
-//            self.colorRect = colorRect
-//            self.colorFont = colorFont
-//            self.colorFamily = colorFamily
-//        }
-
         ZStack{
             Rectangle()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -92,57 +93,3 @@ public struct FontMenu: View{
         }
     }
 }
-
-//public struct RemoteImageView<Content: View>: View {
-//  // 1
-//  @ObservedObject var imageFetcher: RemoteImageFetcher
-//  var content: (_ image: Image) -> Content
-//  let placeHolder: Image
-//
-//  // 2
-//  @State var previousURL: URL? = nil
-//  @State var imageData: Data = Data()
-//
-//  // 3
-//  public init(
-//    placeHolder: Image,
-//    imageFetcher: RemoteImageFetcher,
-//    content: @escaping (_ image: Image) -> Content
-//  ) {
-//    self.placeHolder = placeHolder
-//    self.imageFetcher = imageFetcher
-//    self.content = content
-//  }
-//
-//  // 4
-//  public var body: some View {
-//    DispatchQueue.main.async {
-//      if (self.previousURL != self.imageFetcher.getUrl()) {
-//        self.previousURL = self.imageFetcher.getUrl()
-//      }
-//
-//      if (!self.imageFetcher.imageData.isEmpty) {
-//        self.imageData = self.imageFetcher.imageData
-//      }
-//    }
-//
-//    let uiImage = imageData.isEmpty ? nil : UIImage(data: imageData)
-//    let image = uiImage != nil ? Image(uiImage: uiImage!) : nil;
-//
-//    // 5
-//    return ZStack() {
-//      if image != nil {
-//        content(image!)
-//      } else {
-//        content(placeHolder)
-//      }
-//    }
-//    .onAppear(perform: loadImage)
-//  }
-//
-//  // 6
-//  private func loadImage() {
-//    imageFetcher.fetch()
-//  }
-//}
-
