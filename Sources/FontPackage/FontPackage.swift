@@ -1,14 +1,6 @@
 import SwiftUI
 import UIKit
 
-public struct FontPackage {
-    public private(set) var text = "Hello, World!"
-
-    public init() {
-
-    }
-}
-
 public struct FontMenu: View{
     
     @State var showmenu = false
