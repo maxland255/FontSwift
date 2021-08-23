@@ -18,11 +18,18 @@ public struct FontMenu: View{
     var colorRect: Color
     var colorFamily: Color
     
-    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color){
+    var colorButton: Color
+    var BackgroundButton: Color
+    var clipshapeButton: RoundedRectangle
+    
+    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshadeButton: RoundedRectangle){
         self._fontname = fontname
         self.colorRect = colorRect
         self.colorFont = colorFont
         self.colorFamily = colorFamily
+        self.colorButton = colorButton
+        self.BackgroundButton = backgroundButton
+        self.clipshapeButton = clipshadeButton
     }
     
     public var body: some View{
@@ -33,7 +40,9 @@ public struct FontMenu: View{
                 }
             }) {
                 Text("Select font: \(fontname)")
-            }
+            }.foregroundColor(colorButton)
+                .background(BackgroundButton)
+                .clipShape(clipshapeButton)
             
             if showmenu{
                 ZStack{
