@@ -24,7 +24,6 @@ public struct FontMenu: View{
     var clipshapeButton: RoundedRectangle
     var paddingbutton: Edge.Set
     var paddingNumButton: CGFloat
-    var hovereffect: HoverEffect
     
     public var body: some View{
         if showmenu {
@@ -92,7 +91,7 @@ public struct FontMenu: View{
 }
 
 extension FontMenu{
-    public init(showMenu: Binding<Bool>, fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshadeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect){
+    public init(showMenu: Binding<Bool>, fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshadeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat){
         self._showmenu = showMenu
         self._fontname = fontname
         self.colorRect = colorRect
@@ -103,21 +102,6 @@ extension FontMenu{
         self.clipshapeButton = clipshadeButton
         self.paddingbutton = paddingButton
         self.paddingNumButton = paddingNumButton
-        self.hovereffect = hovereffect
-    }
-    
-    public init(showMenu: Binding<Bool>, fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, hovereffect: HoverEffect){
-        self._showmenu = showMenu
-        self._fontname = fontname
-        self.colorRect = colorRect
-        self.colorFont = colorFont
-        self.colorFamily = colorFamily
-        self.colorButton = colorButton
-        self.BackgroundButton = Color.clear
-        self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
-        self.paddingbutton = .all
-        self.paddingNumButton = 0
-        self.hovereffect = hovereffect
     }
     
     public init(showMenu: Binding<Bool>, fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color){
@@ -131,7 +115,6 @@ extension FontMenu{
         self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
         self.paddingbutton = .all
         self.paddingNumButton = 0
-        self.hovereffect = .automatic
     }
     
     public init(showMenu: Binding<Bool>, fontname: Binding<String>){
@@ -145,7 +128,6 @@ extension FontMenu{
         self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
         self.paddingbutton = .all
         self.paddingNumButton = 0
-        self.hovereffect = .automatic
     }
 }
 
