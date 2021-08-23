@@ -3,7 +3,7 @@ import SwiftUI
 @available(iOS 14, macOS 11, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
-public struct FontMenu: View{
+public struct FontMenuButton: View{
     
     @State var showmenu = false
     @Binding var fontname: String
@@ -98,7 +98,7 @@ public struct FontMenu: View{
     }
 }
 
-extension FontMenu{
+extension FontMenuButton{
     public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshadeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect){
         self._fontname = fontname
         self.colorRect = colorRect
