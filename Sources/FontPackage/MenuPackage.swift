@@ -10,15 +10,14 @@ public struct CustomMenu<Content: View>: View {
     var colorRect: Color
     var colorFamily: Color
     
+    var colorButton: Color
+    var BackgroundButton: Color
+    var clipshapeButton: RoundedRectangle
+    var paddingbutton: Edge.Set
+    var paddingNumButton: CGFloat
+    var hovereffect: HoverEffect
+    
     private let content: () -> Content
-        
-    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, @ViewBuilder content: @escaping () -> Content){
-        self._fontname = fontname
-        self.colorFont = colorFont
-        self.colorRect = colorRect
-        self.colorFamily = colorFamily
-        self.content = content
-    }
         
     public var body: some View {
         ZStack{
@@ -28,11 +27,11 @@ public struct CustomMenu<Content: View>: View {
                 }
             }) {
                 Text("Select font: \(fontname)")
-            }//.foregroundColor(colorButton)
-//                .padding(paddingbutton, paddingNumButton)
-//                .background(BackgroundButton)
-//                .clipShape(clipshapeButton)
-//                .hoverEffect(hovereffect)
+            }.foregroundColor(colorButton)
+                .padding(paddingbutton, paddingNumButton)
+                .background(BackgroundButton)
+                .clipShape(clipshapeButton)
+                .hoverEffect(hovereffect)
             
             if showmenu{
                 ZStack{
@@ -46,7 +45,7 @@ public struct CustomMenu<Content: View>: View {
                         .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.00000000000000000000000000000000000001)))
                     Rectangle()
                         .frame(width: 350)
-                        .frame(minHeight: 100, maxHeight: 1000)
+                        .frame(minHeight: 5, maxHeight: 1000)
                         .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                         .foregroundColor(colorRect)
                         
@@ -61,6 +60,92 @@ public struct CustomMenu<Content: View>: View {
                 }
             }
         }
+    }
+}
+
+extension CustomMenu{
+    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, @ViewBuilder content: @escaping () -> Content){
+        self._fontname = fontname
+        self.colorFont = colorFont
+        self.colorRect = colorRect
+        self.colorFamily = colorFamily
+        self.content = content
+        self.colorButton = colorButton
+        self.BackgroundButton = backgroundButton
+        self.clipshapeButton = clipshapeButton
+        self.paddingbutton = paddingButton
+        self.paddingNumButton = paddingNumButton
+        self.hovereffect = hovereffect
+    }
+    
+    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, hovereffect: HoverEffect, @ViewBuilder content: @escaping () -> Content){
+        self._fontname = fontname
+        self.colorFont = colorFont
+        self.colorRect = colorRect
+        self.colorFamily = colorFamily
+        self.content = content
+        self.colorButton = colorButton
+        self.BackgroundButton = backgroundButton
+        self.clipshapeButton = clipshapeButton
+        self.paddingbutton = .all
+        self.paddingNumButton = 0
+        self.hovereffect = hovereffect
+    }
+    
+    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, @ViewBuilder content: @escaping () -> Content){
+        self._fontname = fontname
+        self.colorFont = colorFont
+        self.colorRect = colorRect
+        self.colorFamily = colorFamily
+        self.content = content
+        self.colorButton = colorButton
+        self.BackgroundButton = backgroundButton
+        self.clipshapeButton = clipshapeButton
+        self.paddingbutton = paddingButton
+        self.paddingNumButton = paddingNumButton
+        self.hovereffect = .automatic
+    }
+    
+    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, @ViewBuilder content: @escaping () -> Content){
+        self._fontname = fontname
+        self.colorFont = colorFont
+        self.colorRect = colorRect
+        self.colorFamily = colorFamily
+        self.content = content
+        self.colorButton = colorButton
+        self.BackgroundButton = backgroundButton
+        self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
+        self.paddingbutton = paddingButton
+        self.paddingNumButton = paddingNumButton
+        self.hovereffect = hovereffect
+    }
+    
+    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, @ViewBuilder content: @escaping () -> Content){
+        self._fontname = fontname
+        self.colorFont = colorFont
+        self.colorRect = colorRect
+        self.colorFamily = colorFamily
+        self.content = content
+        self.colorButton = colorButton
+        self.BackgroundButton = backgroundButton
+        self.clipshapeButton = clipshapeButton
+        self.paddingbutton = .all
+        self.paddingNumButton = 0
+        self.hovereffect = .automatic
+    }
+    
+    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, @ViewBuilder content: @escaping () -> Content){
+        self._fontname = fontname
+        self.colorFont = colorFont
+        self.colorRect = colorRect
+        self.colorFamily = colorFamily
+        self.content = content
+        self.colorButton = colorButton
+        self.BackgroundButton = backgroundButton
+        self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
+        self.paddingbutton = .all
+        self.paddingNumButton = 0
+        self.hovereffect = .automatic
     }
 }
 
