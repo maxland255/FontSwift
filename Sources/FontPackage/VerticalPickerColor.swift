@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+@available(iOS 14, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
 public struct VerticalColorPicker: View {
     
     @State private var black = false
