@@ -16,32 +16,32 @@ public struct CustomMenu<Content: View>: View {
         
     public var body: some View {
         if showmenu{
-            VStack{
-                ZStack{
-                    Rectangle()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .onTapGesture(perform: {
-                            withAnimation(.linear(duration: 0.5)){
-                                self.showmenu = false
-                            }
-                        })
-                        .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.00000000000000000000000000000000000001)))
-                    Rectangle()
-                        .frame(width: 350)
-                        .frame(minHeight: 15, maxHeight: 1000)
-                        .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                        .foregroundColor(colorRect)
-                        
-                    ScrollView{
+            ZStack{
+                Rectangle()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .onTapGesture(perform: {
+                        withAnimation(.linear(duration: 0.5)){
+                            self.showmenu = false
+                        }
+                    })
+                    .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.00000000000000000000000000000000000001)))
+//                Rectangle()
+//                    .frame(width: 350)
+//                    .frame(minHeight: 15, maxHeight: 1000)
+//                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+//                    .foregroundColor(colorRect)
+                    
+                ScrollView{
+                    GeometryReader { geo in
                         LazyVStack{
                             content().frame(width: 350).background(colorFont).padding(.bottom, espacement)
-                        }
-                    }.clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                        .navigationBarHidden(true)
-                        .frame(width: 350)
-                        .frame(minHeight: 15, maxHeight: 1000)
-                }
-                Spacer()
+                        }.frame(minHeight: 15, maxHeight: geo.size.height)
+                    }
+                }.background(colorRect)
+                .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                .navigationBarHidden(true)
+                .frame(width: 350)
+                    
             }
         }
     }
