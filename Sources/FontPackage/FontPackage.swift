@@ -1,5 +1,8 @@
 import SwiftUI
 
+@available(iOS 14, macOS 11, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
 public struct FontMenu: View{
     
     @State var showmenu = false

@@ -1,6 +1,9 @@
 //
 import SwiftUI
 
+@available(iOS 14, macOS 11, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
 public struct CustomMenu<Content: View>: View {
     
     @State var showmenu = false
@@ -51,7 +54,7 @@ public struct CustomMenu<Content: View>: View {
                         
                     ScrollView{
                         LazyVStack{
-                            content()
+                            content().frame(minWidth: 100, maxWidth: 400).background(Color.gray)
                         }
                     }.clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                         .navigationBarHidden(true)
