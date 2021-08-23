@@ -7,7 +7,7 @@ import SwiftUI
 public struct CustomMenu<Content: View>: View {
     
     @State var showmenu = false
-    @Binding var nameButton: String
+    var nameButton: String
     
     var colorFont: Color
     var colorRect: Color
@@ -73,8 +73,8 @@ public struct CustomMenu<Content: View>: View {
 }
 
 extension CustomMenu{
-    public init(nameButton: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, hovereffect: HoverEffect, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
-        self._nameButton = nameButton
+    public init(nameButton: String, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, hovereffect: HoverEffect, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+        self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -90,8 +90,8 @@ extension CustomMenu{
         self.espacement = espacement
     }
     
-    public init(nameButton: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
-        self._nameButton = nameButton
+    public init(nameButton: String, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+        self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -107,8 +107,8 @@ extension CustomMenu{
         self.espacement = espacement
     }
     
-    public init(nameButton: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
-        self._nameButton = nameButton
+    public init(nameButton: String, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+        self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -124,8 +124,8 @@ extension CustomMenu{
         self.espacement = espacement
     }
     
-    public init(nameButton: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
-        self._nameButton = nameButton
+    public init(nameButton: String, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+        self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -141,8 +141,8 @@ extension CustomMenu{
         self.espacement = espacement
     }
     
-    public init(nameButton: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
-        self._nameButton = nameButton
+    public init(nameButton: String, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+        self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -158,8 +158,8 @@ extension CustomMenu{
         self.espacement = espacement
     }
     
-    public init(nameButton: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
-        self._nameButton = nameButton
+    public init(nameButton: String, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+        self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -175,8 +175,8 @@ extension CustomMenu{
         self.espacement = espacement
     }
     
-    public init(nameButton: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, hovereffect: HoverEffect, @ViewBuilder content: @escaping () -> Content){
-        self._nameButton = nameButton
+    public init(nameButton: String, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, hovereffect: HoverEffect, @ViewBuilder content: @escaping () -> Content){
+        self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -192,8 +192,8 @@ extension CustomMenu{
         self.espacement = -5
     }
     
-    public init(nameButton: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
-        self._nameButton = nameButton
+    public init(nameButton: String, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+        self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
