@@ -17,14 +17,18 @@ struct MenuCustom: View {
     @State var colorRect: Color = Color(#colorLiteral(red: 0.6581935287, green: 0.6499102712, blue: 0.9234976172, alpha: 1))
     @State var colorFamily: Color = Color(#colorLiteral(red: 0.1326799691, green: 0.2375315726, blue: 0.8680827022, alpha: 1))
     
+    @State var color: Color = Color.black
+    
     var body: some View {
         VStack{
             if !fontname.isEmpty{
                 Text(fontname).font(Font(UIFont(name: fontname, size: 20)!))
             }
 
+            //Menu pour récuperer les polices
             FontMenu(fontname: self.$fontname, colorFont: self.colorFont, colorRect: self.colorRect, colorFamily: self.colorFamily, colorButton: Color.black, backgroundButton: Color.gray, clipshadeButton: RoundedRectangle(cornerRadius: 25, style: .continuous), paddingButton: .all, paddingNumButton: 16, hovereffect: .highlight)
 
+            //Custom menu
             CustomMenu(showMenu: self.$showmenu, nameButton: "Font: \(fontname)", colorFont: self.colorFont, colorRect: self.colorRect, colorButton: Color.white, backgroundButton: Color.blue, clipshapeButton: RoundedRectangle(cornerRadius: 25, style: .continuous), paddingButton: .all, paddingNumButton: 5, fontButton: .headline, fontWeightButton: .semibold, hovereffect: .highlight, espacement: -5, content: {
                 ForEach(UIFont.familyNames, id: \.self){family in
                     Text("\(family)").font(.title3).padding()
@@ -40,6 +44,9 @@ struct MenuCustom: View {
                     }
                 }
             })
+            
+            //Custom ColorPicker
+            VerticalColorPicker(chosenColor: self.$color).padding()
         }
     }
 }
