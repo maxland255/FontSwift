@@ -35,7 +35,7 @@ public struct CustomMenu<Content: View>: View {
                     GeometryReader { geo in
                         LazyVStack{
                             content().frame(width: 350).background(colorFont).padding(.bottom, espacement)
-                        }.frame(minHeight: 15, maxHeight: geo.size.height)
+                        }.frame(height: geo.size.height)
                     }
                 }.background(colorRect)
                 .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
