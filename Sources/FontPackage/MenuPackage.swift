@@ -3,7 +3,7 @@ import SwiftUI
 
 public struct CustomMenu<Content: View>: View {
     
-    @Binding var showmenu: Bool
+    @State var showmenu = false
     @Binding var fontname: String
     
     var colorFont: Color
@@ -12,8 +12,7 @@ public struct CustomMenu<Content: View>: View {
     
     private let content: () -> Content
         
-    public init(showmenu: Binding<Bool>, fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, @ViewBuilder content: @escaping () -> Content){
-        self._showmenu = showmenu
+    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, @ViewBuilder content: @escaping () -> Content){
         self._fontname = fontname
         self.colorFont = colorFont
         self.colorRect = colorRect
@@ -23,28 +22,44 @@ public struct CustomMenu<Content: View>: View {
         
     public var body: some View {
         ZStack{
-            Rectangle()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .onTapGesture(perform: {
-                    withAnimation(.linear(duration: 0.5)){
-                        self.showmenu = false
-                    }
-                })
-                .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.00000000000000000000000000000000000001)))
-            Rectangle()
-                .frame(width: 350)
-                .frame(minHeight: 100, maxHeight: 1000)
-                .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                .foregroundColor(colorRect)
-                
-            ScrollView{
-                LazyVStack{
-                    content()
+            Button(action: {
+                withAnimation(.linear(duration: 0.5)){
+                    self.showmenu.toggle()
                 }
-            }.clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                .navigationBarHidden(true)
-                .frame(width: 350)
-                .frame(minHeight: 100, maxHeight: 1000)
+            }) {
+                Text("Select font: \(fontname)")
+            }//.foregroundColor(colorButton)
+//                .padding(paddingbutton, paddingNumButton)
+//                .background(BackgroundButton)
+//                .clipShape(clipshapeButton)
+//                .hoverEffect(hovereffect)
+            
+            if showmenu{
+                ZStack{
+                    Rectangle()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .onTapGesture(perform: {
+                            withAnimation(.linear(duration: 0.5)){
+                                self.showmenu = false
+                            }
+                        })
+                        .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.00000000000000000000000000000000000001)))
+                    Rectangle()
+                        .frame(width: 350)
+                        .frame(minHeight: 100, maxHeight: 1000)
+                        .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                        .foregroundColor(colorRect)
+                        
+                    ScrollView{
+                        LazyVStack{
+                            content()
+                        }
+                    }.clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                        .navigationBarHidden(true)
+                        .frame(width: 350)
+                        .frame(minHeight: 100, maxHeight: 1000)
+                }
+            }
         }
     }
 }
