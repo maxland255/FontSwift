@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct ColorPicker: View {
+public struct VerticalColorPicker: View {
     
     @State private var black = false
     
@@ -91,9 +91,9 @@ public struct ColorPicker: View {
     }
 }
 
-extension ColorPicker{
-    public init(chosencolor: Binding<Color>) {
-        self._chosenColor = chosencolor
+extension VerticalColorPicker{
+    public init(chosenColor: Binding<Color>) {
+        self._chosenColor = chosenColor
     }
 }
 
