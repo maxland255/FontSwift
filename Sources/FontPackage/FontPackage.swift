@@ -21,8 +21,10 @@ public struct FontMenu: View{
     var colorButton: Color
     var BackgroundButton: Color
     var clipshapeButton: RoundedRectangle
+    var paddingbutton: Edge.Set
+    var paddingNumButton: CGFloat
     
-    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshadeButton: RoundedRectangle){
+    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshadeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat){
         self._fontname = fontname
         self.colorRect = colorRect
         self.colorFont = colorFont
@@ -30,6 +32,8 @@ public struct FontMenu: View{
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = clipshadeButton
+        self.paddingbutton = paddingButton
+        self.paddingNumButton = paddingNumButton
     }
     
     public var body: some View{
@@ -41,6 +45,7 @@ public struct FontMenu: View{
             }) {
                 Text("Select font: \(fontname)")
             }.foregroundColor(colorButton)
+                .padding(paddingbutton, paddingNumButton)
                 .background(BackgroundButton)
                 .clipShape(clipshapeButton)
             
