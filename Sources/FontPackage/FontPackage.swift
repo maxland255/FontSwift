@@ -19,15 +19,15 @@ public struct FontMenu: View{
     
     @State var hovereffect = false
     
-    public init(showmenu: Bool, fontname: String, colorFont: Color, colorRect: Color, colorFamily: Color){
-        self.showmenu = showmenu
-        self.fontname = fontname
-        self.colorRect = colorRect
-        self.colorFont = colorFont
-        self.colorFamily = colorFamily
-    }
-    
     public var body: some View{
+//        public init(showmenu: Bool, fontname: String, colorFont: Color, colorRect: Color, colorFamily: Color){
+//            self.showmenu = showmenu
+//            self.fontname = fontname
+//            self.colorRect = colorRect
+//            self.colorFont = colorFont
+//            self.colorFamily = colorFamily
+//        }
+
         ZStack{
             Rectangle()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
