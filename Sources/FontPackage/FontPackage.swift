@@ -92,7 +92,7 @@ public struct FontMenu: View{
                         .navigationBarHidden(true)
                         .frame(width: 350)
                         .frame(minHeight: 100, maxHeight: 1000)
-                }
+                }.zIndex(10)
             }
         }
     }

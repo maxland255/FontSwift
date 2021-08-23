@@ -67,7 +67,7 @@ public struct CustomMenu<Content: View>: View {
                         .frame(minHeight: 100, maxHeight: 1000)
                 }
             }
-        }
+        }.zIndex(10)
     }
 }
 
