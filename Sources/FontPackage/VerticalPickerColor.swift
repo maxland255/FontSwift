@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ColorPicker: View {
+public struct ColorPicker: View {
     
     @State private var black = false
     
