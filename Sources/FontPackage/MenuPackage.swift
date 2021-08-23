@@ -25,20 +25,23 @@ public struct CustomMenu<Content: View>: View {
                         }
                     })
                     .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.00000000000000000000000000000000000001)))
-                Rectangle()
-                    .frame(width: 350)
-                    .frame(minHeight: 5, maxHeight: 1000)
-                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                    .foregroundColor(colorRect)
-                    
-                ScrollView{
-                    LazyVStack{
-                        content().frame(width: 350).background(colorFont).padding(.bottom, espacement)
-                    }
-                }.clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                    .navigationBarHidden(true)
-                    .frame(width: 350)
-                    .frame(minHeight: 100, maxHeight: 1000)
+                VStack{
+                    Rectangle()
+                        .frame(width: 350)
+                        .frame(minHeight: 5, maxHeight: 1000)
+                        .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                        .foregroundColor(colorRect)
+                        
+                    ScrollView{
+                        LazyVStack{
+                            content().frame(width: 350).background(colorFont).padding(.bottom, espacement)
+                        }
+                    }.clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                        .navigationBarHidden(true)
+                        .frame(width: 350)
+                        .frame(minHeight: 100, maxHeight: 1000)
+                    Spacer()
+                }
             }
         }
     }
