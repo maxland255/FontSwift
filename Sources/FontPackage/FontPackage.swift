@@ -94,7 +94,7 @@ public struct FontMenu: View{
                         .frame(minHeight: 100, maxHeight: 1000)
                 }
             }
-        }.transition(.scale(scale: 1, anchor: .center))
+        }
     }
 }
 
