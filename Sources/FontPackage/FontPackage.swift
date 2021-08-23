@@ -23,8 +23,9 @@ public struct FontMenu: View{
     var clipshapeButton: RoundedRectangle
     var paddingbutton: Edge.Set
     var paddingNumButton: CGFloat
+    var hovereffect: HoverEffect
     
-    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshadeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat){
+    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshadeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect){
         self._fontname = fontname
         self.colorRect = colorRect
         self.colorFont = colorFont
@@ -34,6 +35,7 @@ public struct FontMenu: View{
         self.clipshapeButton = clipshadeButton
         self.paddingbutton = paddingButton
         self.paddingNumButton = paddingNumButton
+        self.hovereffect = hovereffect
     }
     
     public var body: some View{
@@ -48,6 +50,7 @@ public struct FontMenu: View{
                 .padding(paddingbutton, paddingNumButton)
                 .background(BackgroundButton)
                 .clipShape(clipshapeButton)
+                .hoverEffect(hovereffect)
             
             if showmenu{
                 ZStack{
