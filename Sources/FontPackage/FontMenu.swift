@@ -34,36 +34,28 @@ public struct FontMenu: View{
                     LazyVStack(alignment: .leading){
                         ForEach(UIFont.familyNames, id: \.self){family in
                             VStack(alignment: .leading){
-                                Button(action: {
-                                    withAnimation(.linear(duration: 0.5)){
-                                        self.showmenu = false
-                                    }
-                                }) {
-                                    Text("\(family):")
-                                        .font(.title2)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(colorFamily)
-                                }.padding([.top, .leading])
+                                Text("\(family):")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(colorFamily)
+                                    .padding([.top, .leading])
                                 
                                 ForEach(UIFont.fontNames(forFamilyName: family), id: \.self){font in
-                                    VStack(alignment: .leading){
-                                        Button(action: {
-                                            self.fontname = font
-                                            withAnimation(.linear(duration: 0.5)){
-                                                self.showmenu = false
-                                            }
-                                        }) {
-                                            //Label("\(font)", systemImage: "")
-                                            Text("\(font)")
-                                                .font(Font(UIFont(name: "\(font)", size: 20)!))
-                                                .foregroundColor(.black)
-                                                .padding(EdgeInsets(top: 16, leading: 5, bottom: 16, trailing: 5))
-                                                .frame(width: 350)
-                                                .background(colorFont)
-                                                .opacity(0.7)
-                                        }.hoverEffect(.highlight)
-                                        .padding(.bottom, -5)
-                                    }
+                                    Button(action: {
+                                        self.fontname = font
+                                        withAnimation(.linear(duration: 0.5)){
+                                            self.showmenu = false
+                                        }
+                                    }) {
+                                        Label("\(font)", systemImage: fontname == font ? "checkmark.circle" : "")
+                                            .font(Font(UIFont(name: "\(font)", size: 20)!))
+                                            .foregroundColor(.black)
+                                            .padding(EdgeInsets(top: 16, leading: 5, bottom: 16, trailing: 5))
+                                            .frame(width: 350, alignment: .leading)
+                                            .background(colorFont)
+                                            .opacity(0.7)
+                                    }.hoverEffect(.highlight)
+                                    .padding(.bottom, -5)
                                 }
                             }
                         }
