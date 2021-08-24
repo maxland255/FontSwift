@@ -33,7 +33,7 @@ public struct FontMenu: View{
                 ScrollView{
                     LazyVStack(alignment: .leading){
                         ForEach(UIFont.familyNames, id: \.self){family in
-                            VStack{
+                            VStack(alignment: .leading){
                                 Button(action: {
                                     withAnimation(.linear(duration: 0.5)){
                                         self.showmenu = false
@@ -43,7 +43,6 @@ public struct FontMenu: View{
                                         .font(.title2)
                                         .fontWeight(.bold)
                                         .foregroundColor(colorFamily)
-                                        .multilineTextAlignment(.leading)
                                 }.padding(.top)
                                 
                                 ForEach(UIFont.fontNames(forFamilyName: family), id: \.self){font in
@@ -62,7 +61,6 @@ public struct FontMenu: View{
                                             .frame(width: 350)
                                             .background(colorFont)
                                             .opacity(0.7)
-                                            .multilineTextAlignment(.leading)
                                     }.hoverEffect(.highlight)
                                     .padding(.bottom, -5)
                                 }
