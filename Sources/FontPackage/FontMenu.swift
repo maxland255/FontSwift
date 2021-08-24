@@ -34,7 +34,7 @@ public struct FontMenu: View{
                     LazyVStack(){
                         ForEach(UIFont.familyNames, id: \.self){family in
                             VStack(alignment: .leading){
-                                Text("\(family):")
+                                Text("\(family) :")
                                     .font(.headline)
                                     .fontWeight(.bold)
                                     .foregroundColor(colorFamily)
