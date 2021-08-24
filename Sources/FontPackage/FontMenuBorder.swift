@@ -251,4 +251,20 @@ extension FontMenuBorder{
         self.fontButton = .headline
         self.fontWeightButton = .regular
     }
+    
+    public init(fontname: Binding<String>){
+        self._fontname = fontname
+        self.colorFont = Color(#colorLiteral(red: 0.7202454209, green: 1, blue: 0.947959125, alpha: 1))
+        self.colorRect = Color.blue
+        self.colorFamily = Color(#colorLiteral(red: 0.697018683, green: 0.7526807189, blue: 1, alpha: 1))
+        self.widhtBorder = 5
+        self.colorButton = Color.white
+        self.BackgroundButton = Color.gray
+        self.clipshapeButton = RoundedRectangle(cornerRadius: 25, style: .continuous)
+        self.paddingbutton = .all
+        self.paddingNumButton = 16
+        self.hovereffect = .highlight
+        self.fontButton = .headline
+        self.fontWeightButton = .regular
+    }
 }
