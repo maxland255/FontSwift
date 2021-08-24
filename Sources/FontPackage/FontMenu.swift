@@ -43,7 +43,7 @@ public struct FontMenu: View{
                                         .font(.title2)
                                         .fontWeight(.bold)
                                         .foregroundColor(colorFamily)
-                                }.padding(.top)
+                                }.padding([.top, .leading])
                                 
                                 ForEach(UIFont.fontNames(forFamilyName: family), id: \.self){font in
                                     Button(action: {
@@ -56,8 +56,8 @@ public struct FontMenu: View{
                                         Text("\(font)")
                                             .font(Font(UIFont(name: "\(font)", size: 20)!))
                                             .foregroundColor(.black)
-                                            .padding(.vertical)
-                                            .padding(.horizontal, 5)
+                                            .multilineTextAlignment(.leading)
+                                            .padding(EdgeInsets(top: 16, leading: 5, bottom: 16, trailing: 5))
                                             .frame(width: 350)
                                             .background(colorFont)
                                             .opacity(0.7)
