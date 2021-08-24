@@ -9,6 +9,7 @@ public struct FontMenuBorder: View{
     @State private var showmenu = false
     @Binding var fontname: String
     
+    var background: Color
     var colorFont: Color
     var colorRect: Color
     var colorFamily: Color
@@ -90,7 +91,8 @@ public struct FontMenuBorder: View{
                                 }
                             }
                         }
-                    }.overlay{
+                    }.background(background)
+                    .overlay{
                         RoundedRectangle(cornerRadius: 25, style: .continuous)
                             .stroke(lineWidth: widhtBorder)
                     }
@@ -108,8 +110,9 @@ public struct FontMenuBorder: View{
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension FontMenuBorder{
-    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, widhtBorder: CGFloat, colorButton: Color, backgroundButton: Color, clipshadeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight){
+    public init(fontname: Binding<String>, background: Color, colorFont: Color, colorRect: Color, colorFamily: Color, widhtBorder: CGFloat, colorButton: Color, backgroundButton: Color, clipshadeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight){
         self._fontname = fontname
+        self.background = background
         self.colorRect = colorRect
         self.colorFont = colorFont
         self.colorFamily = colorFamily
@@ -124,8 +127,9 @@ extension FontMenuBorder{
         self.fontWeightButton = fontWeightButton
     }
     
-    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, widhtBorder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight){
+    public init(fontname: Binding<String>, background: Color, colorFont: Color, colorRect: Color, colorFamily: Color, widhtBorder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight){
         self._fontname = fontname
+        self.background = background
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -140,8 +144,9 @@ extension FontMenuBorder{
         self.fontWeightButton = fontWeightButton
     }
     
-    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight){
+    public init(fontname: Binding<String>, background: Color, colorFont: Color, colorRect: Color, colorFamily: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight){
         self._fontname = fontname
+        self.background = background
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -156,8 +161,9 @@ extension FontMenuBorder{
         self.fontWeightButton = fontWeightButton
     }
     
-    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight){
+    public init(fontname: Binding<String>, background: Color, colorFont: Color, colorRect: Color, colorFamily: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight){
         self._fontname = fontname
+        self.background = background
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -172,8 +178,9 @@ extension FontMenuBorder{
         self.fontWeightButton = fontWeightButton
     }
     
-    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, fontButton: Font, fontWeightButton: Font.Weight){
+    public init(fontname: Binding<String>, background: Color, colorFont: Color, colorRect: Color, colorFamily: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, fontButton: Font, fontWeightButton: Font.Weight){
         self._fontname = fontname
+        self.background = background
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -188,8 +195,9 @@ extension FontMenuBorder{
         self.fontWeightButton = fontWeightButton
     }
     
-    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, fontButton: Font, fontWeightButton: Font.Weight){
+    public init(fontname: Binding<String>, background: Color, colorFont: Color, colorRect: Color, colorFamily: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, fontButton: Font, fontWeightButton: Font.Weight){
         self._fontname = fontname
+        self.background = background
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -204,8 +212,9 @@ extension FontMenuBorder{
         self.fontWeightButton = fontWeightButton
     }
     
-    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, hovereffect: HoverEffect){
+    public init(fontname: Binding<String>, background: Color, colorFont: Color, colorRect: Color, colorFamily: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, hovereffect: HoverEffect){
         self._fontname = fontname
+        self.background = background
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -220,8 +229,9 @@ extension FontMenuBorder{
         self.fontWeightButton = fontWeightButton
     }
     
-    public init(fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect){
+    public init(fontname: Binding<String>, background: Color, colorFont: Color, colorRect: Color, colorFamily: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect){
         self._fontname = fontname
+        self.background = background
         self.colorFont = colorFont
         self.colorRect = colorRect
         self.colorFamily = colorFamily
@@ -238,6 +248,7 @@ extension FontMenuBorder{
     
     public init(fontname: Binding<String>, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect){
         self._fontname = fontname
+        self.background = Color.white
         self.colorFont = Color(#colorLiteral(red: 0.7202454209, green: 1, blue: 0.947959125, alpha: 1))
         self.colorRect = Color.blue
         self.colorFamily = Color(#colorLiteral(red: 0.697018683, green: 0.7526807189, blue: 1, alpha: 1))
@@ -254,6 +265,7 @@ extension FontMenuBorder{
     
     public init(fontname: Binding<String>){
         self._fontname = fontname
+        self.background = Color.white
         self.colorFont = Color(#colorLiteral(red: 0.7202454209, green: 1, blue: 0.947959125, alpha: 1))
         self.colorRect = Color.blue
         self.colorFamily = Color(#colorLiteral(red: 0.697018683, green: 0.7526807189, blue: 1, alpha: 1))
