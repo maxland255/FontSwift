@@ -53,16 +53,17 @@ public struct FontMenu: View{
                                         }
                                     }) {
                                         ZStack{
-                                            Rectangle()
-                                                .frame(minHeight: 30, maxHeight: 1000)
-                                                .foregroundColor(colorFont)
-                                                .opacity(0.7)
+                                            //Label("\(font)", systemImage: "")
                                             Text("\(font)")
                                                 .font(Font(UIFont(name: "\(font)", size: 20)!))
                                                 .foregroundColor(.black)
                                                 .padding(.vertical)
                                                 .padding(.horizontal, 5)
+                                                .background(colorFont)
+                                                .opacity(0.7)
                                         }.frame(width: 350)
+//                                            .background(colorFont)
+//                                            .opacity(0.7)
                                     }.hoverEffect(.highlight)
                                     .padding(.bottom, -5)
                                 }
