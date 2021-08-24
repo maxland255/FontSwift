@@ -5,7 +5,7 @@ import SwiftUI
 @available(watchOS, unavailable)
 public struct FontMenuButton: View{
     
-    @State var showmenu = false
+    @State private var showmenu = false
     @Binding var fontname: String
     
     var colorFont: Color

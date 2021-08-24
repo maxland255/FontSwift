@@ -1,16 +1,20 @@
-import Foundation
+//
+//  SwiftUIView.swift
+//  SwiftUIView
+//
+//  Created by Harry Pieteraerens on 24/08/2021.
+//
+
 import SwiftUI
 
-@available(iOS 14, macOS 11, *)
-@available(tvOS, unavailable)
-@available(watchOS, unavailable)
-public struct MenuButton<Content: View>: View {
+public struct MenuBorder<Content: View>: View {
     
     @State private var showmenu = false
     var nameButton: String
     
     var colorFont: Color
     var colorRect: Color
+    var widhtBorder: CGFloat
     
     var colorButton: Color
     var BackgroundButton: Color
@@ -56,7 +60,7 @@ public struct MenuButton<Content: View>: View {
                         LazyVStack{
                             content().frame(width: 350).background(colorFont).padding(.bottom, espacement)
                         }
-                    }.background(colorRect)
+                    }.border(colorRect, width: widhtBorder)
                     .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                     .navigationBarHidden(true)
                     .frame(width: 350)
@@ -67,11 +71,12 @@ public struct MenuButton<Content: View>: View {
     }
 }
 
-extension MenuButton{
-    public init(nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, hovereffect: HoverEffect, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+extension MenuBorder{
+    public init(nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, widhtborder: CGFloat, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, hovereffect: HoverEffect, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
+        self.widhtBorder = widhtborder
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = clipshapeButton
@@ -84,10 +89,11 @@ extension MenuButton{
         self.content = content
     }
     
-    public init(nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+    public init(nameButton: String, colorFont: Color, colorRect: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
+        self.widhtBorder = widhtborder
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = clipshapeButton
@@ -100,10 +106,11 @@ extension MenuButton{
         self.content = content
     }
     
-    public init(nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+    public init(nameButton: String, colorFont: Color, colorRect: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
+        self.widhtBorder = widhtborder
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = clipshapeButton
@@ -116,10 +123,11 @@ extension MenuButton{
         self.content = content
     }
     
-    public init(nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+    public init(nameButton: String, colorFont: Color, colorRect: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
+        self.widhtBorder = widhtborder
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
@@ -132,10 +140,11 @@ extension MenuButton{
         self.content = content
     }
     
-    public init(nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+    public init(nameButton: String, colorFont: Color, colorRect: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
+        self.widhtBorder = widhtborder
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = clipshapeButton
@@ -148,10 +157,11 @@ extension MenuButton{
         self.content = content
     }
     
-    public init(nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+    public init(nameButton: String, colorFont: Color, colorRect: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, fontButton: Font, fontWeightButton: Font.Weight, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
+        self.widhtBorder = widhtborder
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
@@ -164,10 +174,11 @@ extension MenuButton{
         self.content = content
     }
     
-    public init(nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, hovereffect: HoverEffect, @ViewBuilder content: @escaping () -> Content){
+    public init(nameButton: String, colorFont: Color, colorRect: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, hovereffect: HoverEffect, @ViewBuilder content: @escaping () -> Content){
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
+        self.widhtBorder = widhtborder
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = clipshapeButton
@@ -180,10 +191,28 @@ extension MenuButton{
         self.content = content
     }
     
-    public init(nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+    public init(nameButton: String, colorFont: Color, colorRect: Color, widhtborder: CGFloat, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
         self.nameButton = nameButton
         self.colorFont = colorFont
         self.colorRect = colorRect
+        self.widhtBorder = widhtborder
+        self.colorButton = colorButton
+        self.BackgroundButton = backgroundButton
+        self.clipshapeButton = clipshapeButton
+        self.paddingbutton = paddingButton
+        self.paddingNumButton = paddingNumButton
+        self.hovereffect = hovereffect
+        self.fontButton = .headline
+        self.fontWeightButton = .regular
+        self.espacement = espacement
+        self.content = content
+    }
+    
+    public init(nameButton: String, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, hovereffect: HoverEffect, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
+        self.nameButton = nameButton
+        self.colorFont = Color.gray
+        self.colorRect = Color.blue
+        self.widhtBorder = 5
         self.colorButton = colorButton
         self.BackgroundButton = backgroundButton
         self.clipshapeButton = clipshapeButton

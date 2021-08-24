@@ -3,7 +3,7 @@ import SwiftUI
 @available(iOS 14, macOS 11, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
-public struct CustomMenu<Content: View>: View {
+public struct Menu<Content: View>: View {
     
     @Binding var showmenu: Bool
     
@@ -41,7 +41,7 @@ public struct CustomMenu<Content: View>: View {
     }
 }
 
-extension CustomMenu{
+extension Menu{
     public init(showMenu: Binding<Bool>, colorFont: Color, colorRect: Color, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
         self._showmenu = showMenu
         self.colorFont = colorFont
