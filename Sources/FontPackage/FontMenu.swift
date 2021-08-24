@@ -12,11 +12,11 @@ public struct FontMenu: View{
     var colorRect: Color
     var colorFamily: Color
     
-    var colorButton: Color
-    var BackgroundButton: Color
-    var clipshapeButton: RoundedRectangle
-    var paddingbutton: Edge.Set
-    var paddingNumButton: CGFloat
+//    var colorButton: Color
+//    var BackgroundButton: Color
+//    var clipshapeButton: RoundedRectangle
+//    var paddingbutton: Edge.Set
+//    var paddingNumButton: CGFloat
     
     public var body: some View{
         if showmenu {
@@ -81,30 +81,12 @@ public struct FontMenu: View{
 }
 
 extension FontMenu{
-    public init(showMenu: Binding<Bool>, fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color, backgroundButton: Color, clipshadeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat){
+    public init(showMenu: Binding<Bool>, fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color){
         self._showmenu = showMenu
         self._fontname = fontname
         self.colorRect = colorRect
         self.colorFont = colorFont
         self.colorFamily = colorFamily
-        self.colorButton = colorButton
-        self.BackgroundButton = backgroundButton
-        self.clipshapeButton = clipshadeButton
-        self.paddingbutton = paddingButton
-        self.paddingNumButton = paddingNumButton
-    }
-    
-    public init(showMenu: Binding<Bool>, fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color, colorButton: Color){
-        self._showmenu = showMenu
-        self._fontname = fontname
-        self.colorRect = colorRect
-        self.colorFont = colorFont
-        self.colorFamily = colorFamily
-        self.colorButton = colorButton
-        self.BackgroundButton = Color.clear
-        self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
-        self.paddingbutton = .all
-        self.paddingNumButton = 0
     }
     
     public init(showMenu: Binding<Bool>, fontname: Binding<String>){
@@ -113,11 +95,6 @@ extension FontMenu{
         self.colorRect = Color(#colorLiteral(red: 0.9330300689, green: 0.9330299497, blue: 0.9330299497, alpha: 1))
         self.colorFont = Color(#colorLiteral(red: 0.8600999117, green: 0.8600999713, blue: 0.8600999117, alpha: 0.6019079507))
         self.colorFamily = Color.black
-        self.colorButton = Color.blue
-        self.BackgroundButton = Color.clear
-        self.clipshapeButton = RoundedRectangle(cornerRadius: 0, style: .continuous)
-        self.paddingbutton = .all
-        self.paddingNumButton = 0
     }
 }
 
