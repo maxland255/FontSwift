@@ -65,7 +65,7 @@ public struct MenuBorder<Content: View>: View {
                         }
                     }.overlay{
                         RoundedRectangle(cornerRadius: 25, style: .continuous)
-                            .stroke(lineWidth: 5)
+                            .stroke(lineWidth: widhtBorder)
                             .foregroundColor(colorRect)
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
