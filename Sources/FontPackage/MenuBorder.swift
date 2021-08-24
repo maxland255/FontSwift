@@ -60,8 +60,8 @@ public struct MenuBorder<Content: View>: View {
                         LazyVStack{
                             content().frame(width: 350).background(colorFont).padding(.bottom, espacement)
                         }
-                    }.border(colorRect, width: widhtBorder)
-                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                    }.clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                    .border(colorRect, width: widhtBorder)
                     .navigationBarHidden(true)
                     .frame(width: 350)
                     .frame(minHeight: 100, maxHeight: 1000)
