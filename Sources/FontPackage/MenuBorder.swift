@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+@available(iOS 15, macOS 12, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
 public struct MenuBorder<Content: View>: View {
     
     @State private var showmenu = false
@@ -60,8 +63,12 @@ public struct MenuBorder<Content: View>: View {
                         LazyVStack{
                             content().frame(width: 350).background(colorFont).padding(.bottom, espacement)
                         }
-                    }.clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                    .border(colorRect, width: widhtBorder)
+                    }.overlay{
+                        RoundedRectangle(cornerRadius: 25, style: .continuous)
+                            .stroke()
+                            .foregroundColor(colorRect)
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                     .navigationBarHidden(true)
                     .frame(width: 350)
                     .frame(minHeight: 100, maxHeight: 1000)
@@ -71,6 +78,9 @@ public struct MenuBorder<Content: View>: View {
     }
 }
 
+@available(iOS 15, macOS 12, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
 extension MenuBorder{
     public init(nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, widhtborder: CGFloat, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, hovereffect: HoverEffect, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
         self.nameButton = nameButton
