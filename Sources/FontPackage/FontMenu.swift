@@ -12,12 +12,6 @@ public struct FontMenu: View{
     var colorRect: Color
     var colorFamily: Color
     
-//    var colorButton: Color
-//    var BackgroundButton: Color
-//    var clipshapeButton: RoundedRectangle
-//    var paddingbutton: Edge.Set
-//    var paddingNumButton: CGFloat
-    
     public var body: some View{
         if showmenu {
             ZStack{
