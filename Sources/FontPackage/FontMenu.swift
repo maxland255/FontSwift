@@ -31,7 +31,7 @@ public struct FontMenu: View{
                     .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.00000000000000000000000000000000000001)))
                 
                 ScrollView(){
-                    LazyVStack(alignment: .leading){
+                    LazyVStack(){
                         ForEach(UIFont.familyNames, id: \.self){family in
                             VStack(alignment: .leading){
                                 Text("\(family):")
@@ -47,13 +47,23 @@ public struct FontMenu: View{
                                             self.showmenu = false
                                         }
                                     }) {
-                                        Label("\(font)", systemImage: fontname == font ? "checkmark.circle" : "")
-                                            .font(Font(UIFont(name: "\(font)", size: 20)!))
-                                            .foregroundColor(.black)
-                                            .padding(EdgeInsets(top: 16, leading: 5, bottom: 16, trailing: 5))
-                                            .frame(width: 350, alignment: .leading)
-                                            .background(colorFont)
-                                            .opacity(0.7)
+                                        if fontname == font{
+                                            Label("\(font)", systemImage: "checkmark.circle")
+                                                .font(Font(UIFont(name: "\(font)", size: 20)!))
+                                                .foregroundColor(.black)
+                                                .padding(EdgeInsets(top: 16, leading: 5, bottom: 16, trailing: 5))
+                                                .frame(width: 350, alignment: .leading)
+                                                .background(colorFont)
+                                                .opacity(0.7)
+                                        }else{
+                                            Text("\(font)")
+                                                .font(Font(UIFont(name: "\(font)", size: 20)!))
+                                                .foregroundColor(.black)
+                                                .padding(EdgeInsets(top: 16, leading: 5, bottom: 16, trailing: 5))
+                                                .frame(width: 350, alignment: .leading)
+                                                .background(colorFont)
+                                                .opacity(0.7)
+                                        }
                                     }.hoverEffect(.highlight)
                                     .padding(.bottom, -5)
                                 }
