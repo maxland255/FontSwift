@@ -43,21 +43,16 @@ public struct FontMenuButton: View{
                             }
                         })
                         .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.00000000000000000000000000000000000001)))
-                        
-                    ScrollView{
-                        LazyVStack{
+                    
+                    ScrollView(){
+                        LazyVStack(){
                             ForEach(UIFont.familyNames, id: \.self){family in
-                                VStack{
-                                    Button(action: {
-                                        withAnimation(.linear(duration: 0.5)){
-                                            self.showmenu = false
-                                        }
-                                    }) {
-                                        Text("\(family):")
-                                            .font(.title2)
-                                            .fontWeight(.bold)
-                                            .foregroundColor(colorFamily)
-                                    }.padding(.top)
+                                VStack(alignment: .leading){
+                                    Text("\(family):")
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(colorFamily)
+                                        .padding([.top, .leading])
                                     
                                     ForEach(UIFont.fontNames(forFamilyName: family), id: \.self){font in
                                         Button(action: {
@@ -66,17 +61,23 @@ public struct FontMenuButton: View{
                                                 self.showmenu = false
                                             }
                                         }) {
-                                            ZStack{
-                                                Rectangle()
-                                                    .frame(minHeight: 30, maxHeight: 1000)
-                                                    .foregroundColor(colorFont)
+                                            if fontname == font{
+                                                Label("\(font)", systemImage: "checkmark.circle")
+                                                    .font(Font(UIFont(name: "\(font)", size: 20)!))
+                                                    .foregroundColor(.black)
+                                                    .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 5))
+                                                    .frame(width: 350, alignment: .leading)
+                                                    .background(colorFont)
                                                     .opacity(0.7)
+                                            }else{
                                                 Text("\(font)")
                                                     .font(Font(UIFont(name: "\(font)", size: 20)!))
                                                     .foregroundColor(.black)
-                                                    .padding(.vertical)
-                                                    .padding(.horizontal, 5)
-                                            }.frame(width: 350)
+                                                    .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 5))
+                                                    .frame(width: 350, alignment: .leading)
+                                                    .background(colorFont)
+                                                    .opacity(0.7)
+                                            }
                                         }.hoverEffect(.highlight)
                                         .padding(.bottom, -5)
                                     }
