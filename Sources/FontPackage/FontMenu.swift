@@ -31,7 +31,7 @@ public struct FontMenu: View{
                     .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.00000000000000000000000000000000000001)))
                 
                 ScrollView{
-                    LazyVStack{
+                    LazyVStack(alignment: .trailing){
                         ForEach(UIFont.familyNames, id: \.self){family in
                             VStack{
                                 Button(action: {
