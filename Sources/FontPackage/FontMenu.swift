@@ -52,18 +52,15 @@ public struct FontMenu: View{
                                             self.showmenu = false
                                         }
                                     }) {
-                                        ZStack{
-                                            //Label("\(font)", systemImage: "")
-                                            Text("\(font)")
-                                                .font(Font(UIFont(name: "\(font)", size: 20)!))
-                                                .foregroundColor(.black)
-                                                .padding(.vertical)
-                                                .padding(.horizontal, 5)
-                                                .background(colorFont)
-                                                .opacity(0.7)
-                                        }.frame(width: 350)
-//                                            .background(colorFont)
-//                                            .opacity(0.7)
+                                        //Label("\(font)", systemImage: "")
+                                        Text("\(font)")
+                                            .font(Font(UIFont(name: "\(font)", size: 20)!))
+                                            .foregroundColor(.black)
+                                            .padding(.vertical)
+                                            .padding(.horizontal, 5)
+                                            .frame(width: 350)
+                                            .background(colorFont)
+                                            .opacity(0.7)
                                     }.hoverEffect(.highlight)
                                     .padding(.bottom, -5)
                                 }
