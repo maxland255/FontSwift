@@ -1,6 +1,6 @@
 # FontPackage
 
-FontPackage vous permet d'avoir un menu custom dans lequel vous aurez toutes les polices d'apple que vous pouvez récupérer avec une varibale string pour les utilisées dans vos projets.
+FontPackage vous permet d'avoir un menu custom dans lequel vous aurez toutes les polices d'apple que vous pouvez récupérer avec une variable string pour les utilisées dans vos projets.
 
 
 Exemple: 
