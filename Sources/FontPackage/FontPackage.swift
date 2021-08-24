@@ -49,7 +49,7 @@ public struct FontMenuButton: View{
                             ForEach(UIFont.familyNames, id: \.self){family in
                                 VStack(alignment: .leading){
                                     Text("\(family):")
-                                        .font(.title2)
+                                        .font(.headline)
                                         .fontWeight(.bold)
                                         .foregroundColor(colorFamily)
                                         .padding([.top, .leading])
@@ -63,7 +63,7 @@ public struct FontMenuButton: View{
                                         }) {
                                             if fontname == font{
                                                 Label("\(font)", systemImage: "checkmark.circle")
-                                                    .font(Font(UIFont(name: "\(font)", size: 20)!))
+                                                    .font(Font(UIFont(name: "\(font)", size: 15)!))
                                                     .foregroundColor(.black)
                                                     .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 5))
                                                     .frame(width: 350, alignment: .leading)
