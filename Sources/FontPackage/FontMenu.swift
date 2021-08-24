@@ -46,26 +46,23 @@ public struct FontMenu: View{
                                 }.padding([.top, .leading])
                                 
                                 ForEach(UIFont.fontNames(forFamilyName: family), id: \.self){font in
-                                    HStack{
-                                        Button(action: {
-                                            self.fontname = font
-                                            withAnimation(.linear(duration: 0.5)){
-                                                self.showmenu = false
-                                            }
-                                        }) {
-                                            //Label("\(font)", systemImage: "")
-                                            Text("\(font)")
-                                                .font(Font(UIFont(name: "\(font)", size: 20)!))
-                                                .foregroundColor(.black)
-                                                .padding(EdgeInsets(top: 16, leading: 5, bottom: 16, trailing: 5))
-                                                .frame(width: 350)
-                                                .background(colorFont)
-                                                .opacity(0.7)
-                                        }.hoverEffect(.highlight)
-                                        .padding(.bottom, -5)
-                                        Spacer()
-                                    }
-                                }
+                                    Button(action: {
+                                        self.fontname = font
+                                        withAnimation(.linear(duration: 0.5)){
+                                            self.showmenu = false
+                                        }
+                                    }) {
+                                        //Label("\(font)", systemImage: "")
+                                        Text("\(font)")
+                                            .font(Font(UIFont(name: "\(font)", size: 20)!))
+                                            .foregroundColor(.black)
+                                            .padding(EdgeInsets(top: 16, leading: 5, bottom: 16, trailing: 5))
+                                            .frame(width: 350)
+                                            .background(colorFont)
+                                            .opacity(0.7)
+                                    }.hoverEffect(.highlight)
+                                    .padding(.bottom, -5)
+                                }.frame(alignment: .leading)
                             }
                         }
                     }
