@@ -25,6 +25,7 @@ public struct FontMenu: View{
                     .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.00000000000000000000000000000000000001)))
                 
                 ScrollView(){
+                    #if os(iOS)
                     LazyVStack(){
                         ForEach(UIFont.familyNames, id: \.self){family in
                             VStack(alignment: .leading){
@@ -64,6 +65,47 @@ public struct FontMenu: View{
                             }
                         }
                     }
+                    #elseif os(macOS)
+                    LazyVStack(){
+                        ForEach(NSFont.familyNames, id: \.self){family in
+                            VStack(alignment: .leading){
+                                Text("\(family) :")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(colorFamily)
+                                    .padding([.top, .leading])
+                                
+                                ForEach(NSFont.fontNames(forFamilyName: family), id: \.self){font in
+                                    Button(action: {
+                                        self.fontname = font
+                                        withAnimation(.linear(duration: 0.5)){
+                                            self.showmenu = false
+                                        }
+                                    }) {
+                                        if fontname == font{
+                                            Label("\(font)", systemImage: "checkmark.circle")
+                                                .font(Font(NSFont(name: "\(font)", size: 15)!))
+                                                .foregroundColor(.black)
+                                                .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 5))
+                                                .frame(width: 350, alignment: .leading)
+                                                .background(colorFont)
+                                                .opacity(0.7)
+                                        }else{
+                                            Text("\(font)")
+                                                .font(Font(NSFont(name: "\(font)", size: 20)!))
+                                                .foregroundColor(.black)
+                                                .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 5))
+                                                .frame(width: 350, alignment: .leading)
+                                                .background(colorFont)
+                                                .opacity(0.7)
+                                        }
+                                    }.hoverEffect(.highlight)
+                                    .padding(.bottom, -5)
+                                }
+                            }
+                        }
+                    }
+                    #endif
                 }.background(colorRect)
                 .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                 .navigationBarHidden(true)
