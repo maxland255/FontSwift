@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-@available(iOS 15)
+@available(iOS 15, *)
 @available(macOS, unavailable)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
