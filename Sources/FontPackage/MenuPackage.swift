@@ -34,7 +34,7 @@ public struct Menu<Content: View>: View {
                 .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                 .navigationBarHidden(true)
                 .frame(width: 350)
-                .frame(maxHeight: .infinity)
+                .frame(maxHeight: .none)
                     
             }
         }
