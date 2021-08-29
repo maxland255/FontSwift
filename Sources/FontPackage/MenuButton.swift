@@ -1,7 +1,8 @@
 import Foundation
 import SwiftUI
 
-@available(iOS 14, macOS 11, *)
+@available(iOS 14)
+@available(macOS, unavailable)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 public struct MenuButton<Content: View>: View {
