@@ -14,6 +14,8 @@ public struct Menu<Content: View>: View {
     var espacement: CGFloat
     
     private let content: () -> Content
+    
+    @State private var height: CGFloat = 0
         
     public var body: some View {
         if showmenu{
@@ -29,14 +31,18 @@ public struct Menu<Content: View>: View {
                     
                 ScrollView{
                     LazyVStack{
-                        content().frame(width: 350).background(colorFont).padding(.bottom, espacement)
+                        GeometryReader{Value in
+                            content().frame(maxHeight: Value.size.height).frame(width: 350).background(colorFont).padding(.bottom, espacement).onAppear(perform: {
+                                height = Value.size.height
+                            })
+                        }
+//                        content().frame(width: 350).background(colorFont).padding(.bottom, espacement)
                     }
                 }.background(colorRect)
                 .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                 .navigationBarHidden(true)
                 .frame(width: 350)
-                .frame(maxHeight: .infinity)
-                    
+                .frame(maxHeight: height)
             }
         }
     }
