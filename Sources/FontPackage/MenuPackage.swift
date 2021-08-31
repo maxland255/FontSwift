@@ -30,14 +30,13 @@ public struct Menu<Content: View>: View {
                     .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.00000000000000000000000000000000000001)))
                     
                 ScrollView{
-                    LazyVStack{
-                        GeometryReader{Value in
-                            content().frame(maxHeight: Value.size.height).frame(width: 350).background(colorFont).padding(.bottom, espacement).onAppear(perform: {
-                                height = Value.size.height
-                                print(Value.size.height)
-                            })
-                        }
-//                        content().frame(width: 350).background(colorFont).padding(.bottom, espacement)
+                    GeometryReader{Value in
+                        LazyVStack{
+                            content().frame(width: 350).background(colorFont).padding(.bottom, espacement)
+                        }.onAppear(perform: {
+                            height = Value.size.height
+                            print(Value.size.height)
+                        })
                     }
                 }.background(colorRect)
                 .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
