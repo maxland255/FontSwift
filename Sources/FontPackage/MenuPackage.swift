@@ -34,6 +34,7 @@ public struct Menu<Content: View>: View {
                         GeometryReader{Value in
                             content().frame(maxHeight: Value.size.height).frame(width: 350).background(colorFont).padding(.bottom, espacement).onAppear(perform: {
                                 height = Value.size.height
+                                print(Value.size.height)
                             })
                         }
 //                        content().frame(width: 350).background(colorFont).padding(.bottom, espacement)
