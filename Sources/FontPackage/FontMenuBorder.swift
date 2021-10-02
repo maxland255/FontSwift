@@ -35,11 +35,12 @@ public struct FontMenuBorder: View{
                 Text("Select font: \(fontname)")
                     .font(fontButton)
                     .fontWeight(fontWeightButton)
-            }.foregroundColor(colorButton)
-                .padding(paddingbutton, paddingNumButton)
-                .background(BackgroundButton)
-                .clipShape(clipshapeButton)
-                .hoverEffect(hovereffect)
+                    .foregroundColor(colorButton)
+                    .padding(paddingbutton, paddingNumButton)
+                    .background(BackgroundButton)
+                    .clipShape(clipshapeButton)
+                    .hoverEffect(hovereffect)
+            }
             
             if showmenu {
                 ZStack{

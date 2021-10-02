@@ -28,11 +28,12 @@ public struct FontMenuButton: View{
                 }
             }) {
                 Text("Select font: \(fontname)")
-            }.foregroundColor(colorButton)
-                .padding(paddingbutton, paddingNumButton)
-                .background(BackgroundButton)
-                .clipShape(clipshapeButton)
-                .hoverEffect(hovereffect)
+                    .foregroundColor(colorButton)
+                    .padding(paddingbutton, paddingNumButton)
+                    .background(BackgroundButton)
+                    .clipShape(clipshapeButton)
+                    .hoverEffect(hovereffect)
+            }
             
             if showmenu {
                 ZStack{
