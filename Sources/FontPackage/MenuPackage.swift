@@ -41,6 +41,10 @@ public struct Menu<Content: View>: View {
     }
 }
 
+@available(iOS 14, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
 extension Menu{
     public init(showMenu: Binding<Bool>, colorFont: Color, colorRect: Color, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
         self._showmenu = showMenu

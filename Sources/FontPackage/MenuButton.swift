@@ -68,6 +68,10 @@ public struct MenuButton<Content: View>: View {
     }
 }
 
+@available(iOS 14, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
 extension MenuButton{
     public init(nameButton: String, colorFont: Color, colorRect: Color, colorButton: Color, backgroundButton: Color, clipshapeButton: RoundedRectangle, paddingButton: Edge.Set, paddingNumButton: CGFloat, fontButton: Font, fontWeightButton: Font.Weight, hovereffect: HoverEffect, espacement: CGFloat, @ViewBuilder content: @escaping () -> Content){
         self.nameButton = nameButton

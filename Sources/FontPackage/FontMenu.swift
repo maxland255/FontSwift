@@ -75,6 +75,10 @@ public struct FontMenu: View{
     }
 }
 
+@available(iOS 14, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
 extension FontMenu{
     public init(showMenu: Binding<Bool>, fontname: Binding<String>, colorFont: Color, colorRect: Color, colorFamily: Color){
         self._showmenu = showMenu

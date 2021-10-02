@@ -88,6 +88,10 @@ public struct VerticalColorPicker: View {
     }
 }
 
+@available(iOS 14, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
 extension VerticalColorPicker{
     public init(chosenColor: Binding<Color>) {
         self._chosenColor = chosenColor
